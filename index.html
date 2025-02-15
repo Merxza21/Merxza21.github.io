@@ -12,18 +12,19 @@
             margin: 0;
             padding: 0;
             text-align: center;
+
+            /* Centrado del contenido */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         h1 {
             color: #e60000; /* Rojo brillante para el título */
             font-size: 3em;
             margin-top: 50px;
-        }
-
-        .heart {
-            font-size: 5em;
-            color: red;
-            margin: 20px 0;
         }
 
         .message {
@@ -59,13 +60,36 @@
             height: 100%;
             z-index: -1;
         }
+
+        /* Estilo del corazón con imagen */
+        .corazon {
+            width: 250px;   /* El tamaño del corazón */
+            height: 250px;  /* El tamaño del corazón */
+            object-fit: cover; /* Asegura que la imagen cubra completamente el área del corazón */
+            clip-path: path('M213.1,6.7c-32.4-14.4-73.7,0-88.1,30.6C110.6,4.9,67.5-9.5,36.9,6.7C2.8,22.9-13.4,62.4,13.5,110.9 C33.3,145.1,67.5,170.3,125,217c59.3-46.7,93.5-71.9,111.5-106.1C263.4,64.2,247.2,22.9,213.1,6.7z'); /* Recorta la imagen en forma de corazón */
+            background-image: url('olenka.jpg');  /* La imagen que quieres usar */
+            background-size: cover; /* Hace que la imagen cubra todo el área del corazón */
+            background-position: center; /* Centra la imagen dentro del corazón */
+            animation: beat 1s infinite alternate ease-in-out; /* Animación de latido */
+        }
+
+        /* Animación del latido */
+        @keyframes beat {
+            to {
+                transform: scale(1.05);
+            }
+        }
+
     </style>
 </head>
 <body>
     <div class="background"></div>
     <h1>¡Feliz San Valentín!</h1>
-    <div class="heart">❤️</div>
-    <p class="message">Celebra el amor y la amistad con quienes más quieres.</p>
-    <button class="button" onclick="alert('¡Gracias por visitarnos!')">Enviar un mensaje de amor</button>
+    <div class="corazon"></div> <!-- Aquí está el corazón con la imagen -->
+    <p class="message">Este regalo es muy importante y especial para mí ya que se quedará para siempre aquí, para que puedas verlo cuando gustes. 
+         Me gustaria que pudieras disfrutar de esto ya que no puedo darte un regalo fisico todavia.
+         El dia de hoy me gustaria decirte :        
+    </p>
+    <button class="button">I LOVE YOU</button>
 </body>
 </html>
